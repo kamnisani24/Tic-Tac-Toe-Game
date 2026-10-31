@@ -21,4 +21,6 @@ A simple and interactive two-player Tic Tac Toe game built using HTML, CSS and J
 
 ## Developed By
 Kamni Sani
-B.Tech CSE
+B.Tech Computer Science Engineering YCET Jammu
+##Project Links
+- GitHub: Tic-Tac-Toe-Game
