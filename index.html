@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+<div class="welcome-screen" id="welcomeScreen">
+    <h1>Welcome to Tic Tac Toe!</h1>
+
+    <p>Challenge your friend and win the game!</p>
+
+    <div class="welcome-symbols">
+        <span>X</span>
+        <span>VS</span>
+        <span>O</span>
+    </div>
+
+    <button id="startGame">PLAY GAME</button>
+
+    <p class="welcome-footer">Two Players • One Winner</p>
+</div>
+
+
+    <h1>Tic Tac Toe</h1>
+
+    <div class="game">
+        <div class="board">
+            <button class="cell"></button>
+            <button class="cell"></button>
+            <button class="cell"></button>
+            <button class="cell"></button>
+            <button class="cell"></button>
+            <button class="cell"></button>
+            <button class="cell"></button>
+            <button class="cell"></button>
+            <button class="cell"></button>
+        </div>
+
+        <h2 id="status">Player X's Turn</h2>
+        <div class="scoreboard">
+    <p>Player X: <span id="scoreX">0</span></p>
+    <p>Player O: <span id="scoreO">0</span></p>
+    <p>Draws: <span id="drawScore">0</span></p>
+</div>
+
+        <button id="reset">Restart Game</button><button id="newGame">New Game</button>
+        <button id="soundToggle" class="sound-btn">
+    🔊 Sound ON
+</button>
+
+    </div>
+
+
+<audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
+<audio id="winSound" src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3"></audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
