@@ -31,8 +31,7 @@ let winningPatterns = [
     [2, 4, 6]
 ];
 
-// Click sound
-function playClickSound() {
+// function playClickSound() {
     if (!soundOn) return;
     let audioContext = new (window.AudioContext || window.webkitAudioContext)();
     let oscillator = audioContext.createOscillator();
