@@ -24,3 +24,13 @@ Kamni Sani
 B.Tech Computer Science Engineering YCET Jammu
 ##Project Links
 - GitHub: Tic-Tac-Toe-Game
+- ## Live Demo
+- [Play Tic Tac Toe]
+- https://kamnisani24.github.io/Tic-Tac-Toe-Game/
+
+  ##Technologies Used
+
+-HTML
+-CSS
+JavaScript
+ 
