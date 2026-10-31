@@ -31,25 +31,47 @@ let winningPatterns = [
     [2, 4, 6]
 ];
 
- function playClickSound() {
+ 
+let audioContext;
+
+function playClickSound() {
     if (!soundOn) return;
-    let audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    let oscillator = audioContext.createOscillator();
-    let volume = audioContext.createGain();
 
-    oscillator.type = "sine";
-    oscillator.frequency.value = 600;
-    volume.gain.value = 0.1;
+    const AudioContextClass =
+        window.AudioContext || window.webkitAudioContext;
 
-    oscillator.connect(volume);
-    volume.connect(audioContext.destination);
+    if (!AudioContextClass) return;
 
-    oscillator.start();
-    oscillator.stop(audioContext.currentTime + 0.1);
+    if (!audioContext) {
+        audioContext = new AudioContextClass();
+    }
 
-    oscillator.onended = () => audioContext.close();
+    function playTone() {
+        let oscillator = audioContext.createOscillator();
+        let volume = audioContext.createGain();
+
+        oscillator.type = "sine";
+        oscillator.frequency.value = 600;
+
+        volume.gain.setValueAtTime(0.3, audioContext.currentTime);
+        volume.gain.exponentialRampToValueAtTime(
+            0.001,
+            audioContext.currentTime + 0.15
+        );
+
+        oscillator.connect(volume);
+        volume.connect(audioContext.destination);
+
+        oscillator.start();
+        oscillator.stop(audioContext.currentTime + 0.15);
+    }
+
+    if (audioContext.state === "suspended") {
+        audioContext.resume().then(playTone);
+    } else {
+        playTone();
+    }
 }
-
 // Congratulations voice
 function speakCongratulations() {
     if (!soundOn) return;
